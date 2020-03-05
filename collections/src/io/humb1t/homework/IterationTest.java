@@ -3,11 +3,12 @@ package io.humb1t.homework;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static io.humb1t.Order.OrderStatus.*;
+import static io.humb1t.homework.Order.OrderStatus.*;
+
 
 public class IterationTest {
     private static final List<Order> orders = Arrays.asList(new Order(NOT_STARTED, 200.99f), new Order(NOT_STARTED, 200.99f),
-            new Order(COMPLETED, 69.99f), new Order(NOT_STARTED, 200.99f), new Order(COMPLETED, 150.99f), new Order(COMPLETED, 150.99f),
+            new Order(COMPLETED, 69.99f), new Order(PROCESSING, 200.99f), new Order(COMPLETED, 150.99f), new Order(COMPLETED, 150.99f),
             new Order(COMPLETED, 100.99f));
 
     public static void main(String[] args) {
@@ -27,7 +28,7 @@ public class IterationTest {
 
         System.out.println("Stream API output");
         orders.stream()
-                .filter(order -> order.getStatus() == Order.OrderStatus.COMPLETED)
+                .filter(order -> order.getStatus() == COMPLETED)
                 .filter(order -> order.getPrice() > 100f)
                 .forEach(System.out::println);
 
