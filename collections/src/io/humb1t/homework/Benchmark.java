@@ -1,4 +1,5 @@
 package io.humb1t.homework;
+
 import java.util.HashMap;
 import java.util.TreeMap;
 
@@ -46,13 +47,13 @@ public class Benchmark {
             hashMap.get(i);
         }
         long endTime = System.currentTimeMillis();
-        System.out.println("HashMap read "+ hashMap.size() + " elements. Execution time: " + (endTime - startTime) + "ms");
+        System.out.println("HashMap read " + hashMap.size() + " elements. Execution time: " + (endTime - startTime) + "ms");
         startTime = System.currentTimeMillis();
         for (int i = 0; i < treeMap.size(); i++) {
             treeMap.get(i);
         }
         endTime = System.currentTimeMillis();
-        System.out.println("TreeMap read "+ treeMap.size() + " elements. Execution time: " + (endTime - startTime) + "ms");
+        System.out.println("TreeMap read " + treeMap.size() + " elements. Execution time: " + (endTime - startTime) + "ms");
     }
 
     public static void delete() {
@@ -71,5 +72,4 @@ public class Benchmark {
         endTime = System.currentTimeMillis();
         System.out.println("TreeMap delete " + size + " elements. Execution time: " + (endTime - startTime) + "ms");
     }
-
 }
