@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.TreeMap;
 
 public class Benchmark {
-
     private static final HashMap<Integer, String> hashMap = new HashMap<>();
     private static final TreeMap<Integer, String> treeMap = new TreeMap<>();
 
@@ -24,7 +23,6 @@ public class Benchmark {
         System.out.println("-------------------------------------------------");
     }
 
-
     public static void put(int number) {
         long startTime = System.currentTimeMillis();
         for (int i = 0; i < number; i++) {
@@ -39,7 +37,6 @@ public class Benchmark {
         endTime = System.currentTimeMillis();
         System.out.println("TreeMap put " + number + " elements. Execution time: " + (endTime - startTime) + "ms");
     }
-
 
     public static void read() {
         long startTime = System.currentTimeMillis();
