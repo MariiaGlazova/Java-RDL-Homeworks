@@ -4,28 +4,12 @@ import java.util.Objects;
 
 public class PaymentRequest {
 
-    private int userId;
-    private double discount;
+    private final int userId;
+    private final double discount;
 
     public PaymentRequest(int userId, double discount) {
         this.userId = userId;
         this.discount = discount;
-    }
-
-    public double getDiscount() {
-        return discount;
-    }
-
-    public void setDiscount(double discount) {
-        this.discount = discount;
-    }
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
     }
 
     @Override
