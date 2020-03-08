@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) {
         try {
             new LifeCycleAction().execute();
-        } catch (LifeCycleActionExecutionException | AccessDeniedException | ImpossibleCycleActionException e) {
+        } catch (LifeCycleActionExecutionException | AccessDeniedException e) {
             System.err.println(e.getLocalizedMessage());
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -26,10 +26,14 @@ public class Main {
     }
 
     public static class LifeCycleAction {
-        public void execute() throws LifeCycleActionExecutionException, AccessDeniedException, ImpossibleCycleActionException {
+        public void execute() throws LifeCycleActionExecutionException, AccessDeniedException {
             throw new LifeCycleActionExecutionException();
         }
     }
+
+    public static class LifeCycleActionExecutionException extends Exception {
+    }
+
 
     public void exceptionVsResult() {
         final String result1 = (String) this.returnResult().value;
