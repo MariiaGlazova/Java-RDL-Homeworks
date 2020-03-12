@@ -14,6 +14,6 @@ public class MemoizationCache {
     }
 
     private static Integer square(Integer number) {
-        return cache.computeIfAbsent(number, square -> square * square);
+        return (number != null) ? cache.computeIfAbsent(number, square -> square * square) : 0;
     }
 }
