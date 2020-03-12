@@ -13,6 +13,6 @@ public class SomeResource implements AutoCloseable {
 
     @Override
     public void close() {
-        System.out.println("someResource " + numberOfResource + " closed");
+        System.out.println("someResource " + numberOfResource + " is closed");
     }
 }

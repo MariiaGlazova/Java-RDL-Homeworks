@@ -8,6 +8,7 @@ class ResourceTask {
             secondResource.doIt();
         } finally {
             System.out.println("finally-block goes after try-with-resources");
+            System.out.println("The resources are closed in the reverse order from which they were opened");
         }
     }
 }
