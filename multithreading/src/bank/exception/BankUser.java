@@ -1,9 +1,7 @@
 
 package bank.exception;
 
-import bank.exception.Bank;
-
-public class BankUser implements Runnable {
+class BankUser implements Runnable {
     public static final Bank bank = new Bank(3000);
 
     @Override
@@ -21,7 +19,6 @@ public class BankUser implements Runnable {
                 }
                 bank.transferMoney(amount);
                 amount = (int) (Math.random() * 300) + 200;
-                notifyAll();
         }
         System.out.println("Thread:" + Thread.currentThread() + " stop working.");
     }

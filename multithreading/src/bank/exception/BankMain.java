@@ -2,7 +2,7 @@ package bank.exception;
 
 import bank.InsufficientFundsException;
 
-public class BankMain {
+class BankMain {
     public static void main(String[] args) {
         try {
             new Thread(new BankUser(), "1").start();
