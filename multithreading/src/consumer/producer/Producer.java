@@ -31,19 +31,3 @@ public class Producer implements Runnable {
         }
     }
 }
-
-    /*
-        while (pointer < NUMBER_OF_MESSAGES){
-        Message message = new Message(text, pointer);
-        try {
-        queue.put(message);
-        System.out.println(Thread.currentThread().getName() + " put message " + message);
-        Thread.sleep(random.nextInt(2000) + 2000);
-        } catch (InterruptedException interruptedException) {
-
-        Thread.interrupted();
-        }
-        pointer++;
-        }
-
-     */
