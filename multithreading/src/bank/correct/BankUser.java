@@ -14,6 +14,7 @@ class BankUser implements Runnable {
                 Thread.sleep((int) (Math.random() * 200) + 1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
+                Thread.currentThread().interrupt();
             }
         }
     }

@@ -3,12 +3,13 @@ package bank.exception;
 import bank.InsufficientFundsException;
 
 class BankMain {
+    public static final int NUMBER_OF_BANK_USERS = 5;
+
     public static void main(String[] args) {
         try {
-            new Thread(new BankUser(), "1").start();
-            new Thread(new BankUser(), "2").start();
-            new Thread(new BankUser(), "3").start();
-            new Thread(new BankUser(), "4").start();
+            for (int i = 0; i < NUMBER_OF_BANK_USERS; i++) {
+                new Thread(new BankUser(), String.valueOf(i)).start();
+            }
         } catch (InsufficientFundsException e) {
             e.printStackTrace();
         }

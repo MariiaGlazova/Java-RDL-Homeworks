@@ -2,7 +2,7 @@ package philosophers;
 
 import java.util.Random;
 
-class Philosopher extends Thread {
+class Philosopher implements Runnable {
     private final Fork leftFork;
     private final Fork rightFork;
     private final String name;
@@ -24,6 +24,7 @@ class Philosopher extends Thread {
                     Thread.sleep(random.nextInt(5000) + 5000);
                 } catch (InterruptedException ex) {
                     ex.printStackTrace();
+                    Thread.currentThread().interrupt();
                 }
             }
             leftFork.release();
@@ -40,10 +41,11 @@ class Philosopher extends Thread {
             Thread.sleep(random.nextInt(5000) + 5000);
         } catch (InterruptedException ex) {
             ex.printStackTrace();
+            Thread.currentThread().interrupt();
         }
 
     }
-
+    @Override
     public void run() {
         while (true) {
             eat();

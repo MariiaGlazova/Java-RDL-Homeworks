@@ -11,7 +11,7 @@ public class Dinner {
 
         }
         for (int i = 0; i < NUMBER_OF_PERSONS; ) {
-            new Philosopher("P №" + i, fork[i], fork[++i % NUMBER_OF_PERSONS]).start();
+            new Thread(new Philosopher("P №" + i, fork[i], fork[++i % NUMBER_OF_PERSONS])).start();
         }
     }
 }
