@@ -1,13 +1,13 @@
 package bank.correct;
 
-class UserBank implements Runnable{
+class BankUser implements Runnable {
 
     public static final Bank bank = new Bank(3000);
 
     @Override
     public void run() {
         int amount;
-        while (true){
+        while (true) {
             amount = (int) (Math.random() * 100);
             bank.transferMoney(amount);
             try {

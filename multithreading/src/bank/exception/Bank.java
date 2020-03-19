@@ -18,7 +18,7 @@ class Bank {
     }
 
     public boolean hasEnoughMoney(int amount) {
-        System.out.println("Trying to take " + amount + " from the bank: " + moneyAmount + " Thread:" + Thread.currentThread());
+        System.out.println("Trying to take " + amount + " from the bank: " + moneyAmount + ". Thread:" + Thread.currentThread());
         return moneyAmount > amount;
     }
 
